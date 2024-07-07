@@ -57,14 +57,14 @@
             <h1>Sitronella & Waluyo</h1>
             <p>Kepada Bapak/Ibu/Saudara/i<br>
                 @if (@$undangan)
-                    <button class="btn btn-outline-secondary" style="font-size: 28pt;"
+                    <button class="btn btn-outline-dark" style="font-size: 28pt;"
                         disabled>{{ @$undangan }}</button> <br>
                 @endif
                 Kami mengundang Anda untuk hadir di acara pernikahan kami.
             </p>
             <h2>10 | 08 | 2024</h2>
             <div class="simply-countdown"></div>
-            <a href="#home" class="btn btn-lg mt-4">Buka undangan</a>
+            <a href="#home" class="btn btn-lg mt-4">Scroll Down</a>
         </main>
     </section>
 

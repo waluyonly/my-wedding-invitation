@@ -10,12 +10,13 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $undangan = null;
-        if (@$request->undangan) {
-            if (Undangan::where('nama_lengkap', $request->undangan)->exists()) {
-                $undangan = $request->undangan;
-            }
-        }
+        // $undangan = null;
+        // if (@$request->undangan) {
+        //     if (Undangan::where('nama_lengkap', $request->undangan)->exists()) {
+        //         $undangan = $request->undangan;
+        //     }
+        // }
+        $undangan = $request->undangan;
         return view('home', compact('undangan'));
     }
 
