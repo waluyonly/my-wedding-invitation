@@ -141,7 +141,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8 col-10 text-center">
                     <h2>Lokasi Acara</h2>
-                    <p class="alamat">Alamat: Gedung Asrama Haji Lampung <br>
+                    <p class="alamat">Gedung Madinatul Hujjaj Asrama Haji<br>
                         Jl. Soekarno - Hatta No.36, Rajabasa Raya, Kec. Rajabasa, Kota Bandar Lampung
                     </p>
                     <img src="{{ asset('images/qrcode-alamat.png') }}" alt="" width="500">
