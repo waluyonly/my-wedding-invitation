@@ -126,7 +126,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-6">
                                     <i class="bi bi-calendar3 d-block"></i>
-                                    <span>10 Agustu 2024</span>
+                                    <span>10 Agustus 2024</span>
                                 </div>
                                 <div class="col-md-6">
                                     <i class="bi bi-clock d-block"></i>
