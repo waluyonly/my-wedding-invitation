@@ -274,4 +274,12 @@ footer a:hover {
         padding: 45px;
         margin: 3px;
     }
+
+    .img-alamat {
+      width: 200px;
+    }
+
+    .couple .pengantin {
+      width: 100%;
+    }
 }

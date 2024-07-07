@@ -36,14 +36,16 @@
         href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- simplyCountdown -->
-    <link rel="stylesheet" href="{{ asset('vendors/countdown/simplyCountdown.theme.default.css') }}" />
-    <script src="{{ asset('vendors/countdown/simplyCountdown.min.js') }}"></script>
+    
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('vendors/sakura/sakura.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <!-- simplyCountdown -->
+    <link rel="stylesheet" href="{{ asset('vendors/countdown/simplyCountdown.theme.default.css') }}" />
+    
 
 </head>
 
@@ -63,7 +65,7 @@
                 Kami mengundang Anda untuk hadir di acara pernikahan kami.
             </p>
             <h2>10 | 08 | 2024</h2>
-            <div class="simply-countdown"></div>
+            <div class="simply-countdown text-center"></div>
             <a href="#home" class="btn btn-lg mt-4">Scroll Down</a>
         </main>
     </section>
@@ -79,15 +81,16 @@
             </div>
 
             <div class="row couple text-center">
-                <div class="col">
+                <div class="col pengantin">
                     <h3>Sitronella N H, S.T., M.T</h3>
                     <p>Putri dari <br> Bapak Ir. Rosid Hasim dan Dra. Desi Widianti</p>
                 </div>
-
+                
+                <br>
                 <span class="heart"><i class="bi bi-heart-fill"></i></span>
+                <br>
 
-
-                <div class="col">
+                <div class="col pengantin">
                     <h3>Waluyo, S.T</h3>
                     <p>Putra dari <br> Bapak Sariman dan Ibu Paniyem</p>
                 </div>
@@ -144,7 +147,7 @@
                     <p class="alamat">Gedung Madinatul Hujjaj Asrama Haji<br>
                         Jl. Soekarno - Hatta No.36, Rajabasa Raya, Kec. Rajabasa, Kota Bandar Lampung
                     </p>
-                    <img src="{{ asset('images/qrcode-alamat.png') }}" alt="" width="500">
+                    <img class="img-alamat" src="{{ asset('images/qrcode-alamat.png') }}" alt="" width="100%">
                     <a href="https://maps.app.goo.gl/gWfDaBzJBReQhEGw7" target="_blank"
                         class="btn btn-light btn-sm my-3">Scan di atas atau klik di sini untuk
                         membuka peta</a>
@@ -261,6 +264,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="{{ asset('vendors/countdown/simplyCountdown.min.js') }}"></script>
     <script src="{{ asset('vendors/sakura/sakura.js') }}"></script>
 
     <script type="text/javascript">
