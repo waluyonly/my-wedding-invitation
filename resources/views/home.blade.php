@@ -187,7 +187,7 @@
                     <div class="row">
                         <div class="col">
                             <b>
-                                <p>7. Ruangan terpisah antara Tamu Ikhwan dan Akhwat.</p>
+                                <p>6. Ruangan terpisah antara Tamu Ikhwan dan Akhwat.</p>
                             </b>
                         </div>
                     </div>
