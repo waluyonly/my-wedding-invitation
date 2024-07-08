@@ -275,6 +275,10 @@
                 }
             });
 
+            setTimeout(() => {
+                $("#my_audio").get(0).play();
+            }, 100);
+
             var sakura = new Sakura('body', {
                 colors: [{
                         gradientColorStart: 'rgba(255, 183, 197, 0.9)',
@@ -293,10 +297,6 @@
                     },
                 ],
                 delay: 200,
-            });
-
-            $(document).on('click', function() {
-                document.getElementById("my_audio").play();
             });
 
             $(document).on('click', '.btn-kirim', function() {
