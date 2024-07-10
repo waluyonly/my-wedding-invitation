@@ -91,7 +91,7 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-md-6 col-sm-12 text-center mb-5">
                         <div class="mempelai">
-                            <img src="{{ asset('images/wedding.png') }}" alt="" srcset="">
+                            <img src="{{ asset('images/wanita.png') }}" alt="" srcset="">
                         </div>
                         <h3>Sitronella N H, S.T., M.T</h3>
                         <p>Putri dari <br> Bapak Ir. Rosid Hasim dan Dra. Desi Widianti</p>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="col-xl-6 col-md-6 col-sm-12 text-center mb-5">
                         <div class="mempelai">
-                            <img src="{{ asset('images/wedding.png') }}" alt="" srcset="">
+                            <img src="{{ asset('images/pria.png') }}" alt="" srcset="">
                         </div>
                         <h3>Waluyo, S.T</h3>
                         <p>Putra dari <br> Bapak Sariman dan Ibu Paniyem</p>
