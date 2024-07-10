@@ -29,14 +29,15 @@
     <title>Sitronella & Waluyo Wedding</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/css/all.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"
         rel="stylesheet">
-
-    
+    <link href="https://fonts.googleapis.com/css2?family=Engagement&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -45,7 +46,7 @@
 
     <!-- simplyCountdown -->
     <link rel="stylesheet" href="{{ asset('vendors/countdown/simplyCountdown.theme.default.css') }}" />
-    
+
 
 </head>
 
@@ -57,42 +58,53 @@
         <main>
             <h3>Walimatul 'Ursy</h3>
             <h1>Sitronella & Waluyo</h1>
-            <p>Kepada Bapak/Ibu/Saudara/i<br>
-                @if (@$undangan)
-                    <button class="btn btn-outline-dark" style="font-size: 28pt;"
-                        disabled>{{ @$undangan }}</button> <br>
-                @endif
-                Kami mengundang Anda untuk hadir di acara pernikahan kami.
-            </p>
-            <h2>10 | 08 | 2024</h2>
-            <div class="simply-countdown text-center"></div>
-            <a href="#home" class="btn btn-lg mt-4">Scroll Down</a>
+            <p>Kepada Bapak/Ibu/Saudara/i</p>
+            @if (@$undangan)
+                <h2>{{ @$undangan }}</h2>
+            @endif
+            <a href="javascript:void(0)" class="btn btn-lg mt-4 buka-undangan"> <i class="fa fa-envelope-open"></i> Buka
+                Undangan</a>
         </main>
     </section>
 
     <section id="home" class="home">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <h3><i>Bismillahirrahmanirrahim</i></h3>
-                    <p>Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, yang telah menciptakan makhluk-Nya
-                        berpasang-pasangan. Kami bermaksud menyeleggarakan pernikahan kami: </p>
-                </div>
+            <div class="text-center">
+                <h3>Walimatul 'Ursy</h3>
+                <h1>Sitronella & Waluyo</h1>
+                <h4>-- Sabtu, 10 Agustus 2024 --</h4>
+                <div class="simply-countdown text-center"></div>
+                <br><br>
+                <span class="save-date"> <i class="fa fa-calendar"></i> Save the date</span>
             </div>
+        </div>
+    </section>
 
-            <div class="row couple text-center">
-                <div class="col pengantin">
-                    <h3>Sitronella N H, S.T., M.T</h3>
-                    <p>Putri dari <br> Bapak Ir. Rosid Hasim dan Dra. Desi Widianti</p>
+    <section id="undangan" class="undangan">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+                    <h3 class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h3>
+                    <p>Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, yang telah menciptakan makhluk-Nya
+                        berpasang-pasangan. Kami bermaksud menyeleggarakan acara pernikahan: </p>
                 </div>
-                
-                <br>
-                <span class="heart"><i class="bi bi-heart-fill"></i></span>
-                <br>
-
-                <div class="col pengantin">
-                    <h3>Waluyo, S.T</h3>
-                    <p>Putra dari <br> Bapak Sariman dan Ibu Paniyem</p>
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-md-6 col-sm-12 text-center mb-5">
+                        <div class="mempelai">
+                            <img src="{{ asset('images/wedding.png') }}" alt="" srcset="">
+                        </div>
+                        <h3>Sitronella N H, S.T., M.T</h3>
+                        <p>Putri dari <br> Bapak Ir. Rosid Hasim dan Dra. Desi Widianti</p>
+                        <br>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-sm-12 text-center mb-5">
+                        <div class="mempelai">
+                            <img src="{{ asset('images/wedding.png') }}" alt="" srcset="">
+                        </div>
+                        <h3>Waluyo, S.T</h3>
+                        <p>Putra dari <br> Bapak Sariman dan Ibu Paniyem</p>
+                        <br>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,7 +114,7 @@
         <div class="container">
             <div class="row justify-content-center mt-4">
                 <div class="text-center">
-                    <h2>- Save the Date -</h2>
+                    <h2>Acara</h2>
                     <p>InsyaAllah rangkaian acara akan diselenggarakan pada:</p>
                 </div>
                 <div class="col-md-5 col-10">
@@ -147,7 +159,8 @@
                     <p class="alamat">Gedung Madinatul Hujjaj Asrama Haji<br>
                         Jl. Soekarno - Hatta No.36, Rajabasa Raya, Kec. Rajabasa, Kota Bandar Lampung
                     </p>
-                    <img class="img-alamat" src="{{ asset('images/qrcode-alamat.png') }}" alt="" width="100%">
+                    <img class="img-alamat" src="{{ asset('images/qrcode-alamat.png') }}" alt=""
+                        width="40%"><br>
                     <a href="https://maps.app.goo.gl/gWfDaBzJBReQhEGw7" target="_blank"
                         class="btn btn-light btn-sm my-3">Scan di atas atau klik di sini untuk
                         membuka peta</a>
@@ -156,56 +169,12 @@
         </div>
     </section>
 
-    <section id="tema" class="tema">
+    {{-- <section id="tema" class="tema">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="text-center">
-                    <h2>Adab-Adab Walimah</h2>
-                    <p>Tanpa mengurangi rasa hormat, ada adab seorang muslim ketika menghadiri walimah yang harus
-                        diperhatikan :</p>
-                </div>
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <p>1. Memakai pakaian yang sopan dan menutup aurat.</p>
-                        </div>
-                        <div class="col">
-                            <p>2. Memperhatikan waktu sholat.</p>
-                        </div>
-                        <div class="col">
-                            <p>3. Mendoakan kedua mempelai.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>4. Memperhatikan adab makan.</p>
-                        </div>
-                        <div class="col">
-                            <p>5. Tidak berjabat tangan dengan yang bukan mahrom.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <b>
-                                <p>6. Ruangan terpisah antara Tamu Ikhwan dan Akhwat.</p>
-                            </b>
-                        </div>
-                    </div>
-                    <p class="text-center">Atas perhatian dan pengertiannya, kami mengucapkan terima kasih.
-                        <br>Jazaakumullahu Khayran
-                    </p>
-                </div>
-            </div>
-
-            <div class="row justify-content-center mt-4">
-                <div class="text-center">
-                    <h2> - Doa untuk Pengantin - </h2>
-                    <p>Barakallahu laka wa baraka ‘alaika wa jama’a bainakuma fi khayr<br>
-                        “Semoga Allah memberikan keberkahan padamu dan mengumpulkan kalian berdua dalam kebaikan”</p>
-                </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section id="rsvp" class="rsvp">
         <div class="container">
@@ -215,7 +184,6 @@
                     <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
                 </div>
             </div>
-
             <div class="row row-cols-md-auto g-3 align-items-center justify-content-center">
                 <div class="col-12">
                     <div class="mb-3">
@@ -262,6 +230,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/js/all.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src="{{ asset('vendors/countdown/simplyCountdown.min.js') }}"></script>
@@ -269,6 +239,19 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
+            $("body,html").css({
+                "overflow": "hidden"
+            });
+
+            $(".buka-undangan").on('click', function() {
+                $("body,html").css({
+                    "overflow": "auto"
+                });
+                setTimeout(() => {
+                    document.getElementById("home").scrollIntoView();
+                }, 100);
+            });
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
