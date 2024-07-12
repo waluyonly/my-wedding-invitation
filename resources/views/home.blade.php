@@ -89,21 +89,22 @@
                         berpasang-pasangan. Kami bermaksud menyeleggarakan acara pernikahan: </p>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-xl-6 col-md-6 col-sm-12 text-center mb-5">
+                    <div class="col-xl-5 col-md-5 col-sm-12 text-center mb-5">
                         <div class="mempelai">
                             <img src="{{ asset('images/wanita.png') }}" alt="" srcset="">
                         </div>
                         <h3>Sitronella N H, S.T., M.T</h3>
                         <p>Putri dari <br> Bapak Ir. Rosid Hasim dan Dra. Desi Widianti</p>
-                        <br>
                     </div>
-                    <div class="col-xl-6 col-md-6 col-sm-12 text-center mb-5">
+                    <div class="col-xl-2 col-md-2 col-sm12 text-center">
+                        <span class="heart"><i class="bi bi-heart-fill"></i></span>
+                    </div>
+                    <div class="col-xl-5 col-md-5 col-sm-12 text-center mb-5">
                         <div class="mempelai">
                             <img src="{{ asset('images/pria.png') }}" alt="" srcset="">
                         </div>
                         <h3>Waluyo, S.T</h3>
                         <p>Putra dari <br> Bapak Sariman dan Ibu Paniyem</p>
-                        <br>
                     </div>
                 </div>
             </div>
