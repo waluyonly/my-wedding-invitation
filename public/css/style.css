@@ -5,12 +5,12 @@
 }
 
 body {
+  background-color: var(--bg);
   font-size: 1.2rem;
   font-family: "Work Sans", sans-serif;
   min-height: 2000px;
 }
 
-/* Hero */
 .hero::before {
   content: '';
   position: absolute;
@@ -30,13 +30,15 @@ body {
   min-height: 100vh;
 }
 
-.hero h2 {
-  color: var(--navy);
-}
-
 .hero h1 {
   font-family: "Sacramento", cursive;
   font-size: 6rem;
+  color: var(--navy);
+}
+
+.hero h2 {
+  font-family: "Engagement", cursive;
+  font-size: 5rem;
   color: var(--navy);
 }
 
@@ -62,12 +64,6 @@ body {
   border-color: var(--navy);
 }
 
-.hero h2 {
-  font-family: "Engagement", cursive;
-  font-size: 5rem;
-  color: var(--navy);
-}
-
 /* Home */
 .home {
   background-image: url(../images/bg-pattern.jpg);
@@ -80,8 +76,8 @@ body {
 
 .home h2,
 .info h2,
-.rsvp h2,
-.tema h2 {
+.ucapan h2,
+.rsvp h2 {
   color: var(--navy);
   font-family: 'Parisienne';
   font-size: 5rem;
@@ -133,15 +129,16 @@ body {
   background-position: var(--bg);
   background-size: cover;
   min-height: 100vh;
-  padding-top: 10rem;
+  padding-top: 5rem;
   padding-bottom: 5rem;
 }
 
-.undangan .card {
-  min-height: 90vh;
-  background-color: #31496a4d;
-  margin: 20px 40px 20px 40px;
-  border-radius: 40px;
+.undangan .card-box {
+  min-height: 20vh;
+  background-color: #49679133;
+  margin: 20px 100px 20px 100px;
+  border-radius: 20px;
+  border: transparent;
 }
 
 .undangan h3 {
@@ -179,19 +176,36 @@ body {
   width: 300px;
 }
 
-/* Info */
-.info,
-.tema {
-  background-color: var(--bg);
-  color: var(--navy);
-  padding-top: 10rem;
-  padding-bottom: 8rem;
+.heart {
+  color: #4c6992;
+  font-size: 6rem;
+  align-self: center;
+  padding: 40px 0 40px 0;
+  animation: zoom 30s infinite;
+  -webkit-animation: zoom 30s infinite;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 .info {
-  background-image: url();
+  background-color: var(--bg);
   background-size: cover;
   background-position: center;
+  color: var(--navy);
+  padding-top: 10rem;
+  padding-bottom: 8rem;
 }
 
 .info .alamat {
@@ -203,13 +217,13 @@ body {
   font-weight: 300;
 }
 
-.info .card {
+/* .info .card {
   background-color: var(--navy);
   color: var(--bg);
   border: 1px solid var(--navy);
-}
+} */
 
-.info .card-header {
+/* .info .card-header {
   border-bottom: 1px solid var(--navy);
   background-color: var(--bg);
   text-transform: uppercase;
@@ -224,21 +238,31 @@ body {
   border-top: 1px solid var(--navy);
   font-size: 0.9rem;
   font-weight: 300;
+} */
+
+.ucapan, .rsvp {
+  min-height: 20vh;
+  background-color: #49679133;
+  margin: 20px 100px 20px 100px;
+  border-radius: 20px;
+  border: transparent;
 }
 
-/* Tema Acara */
+.ucapan .form-ucapan {
+  padding: 20px;
+}
 
-.tema {
+.ucapan input, .ucapan textarea {
+  background-color: var(--bg);
+}
+
+.ucapan button {
   background-color: var(--navy);
-  color: var(--bg);
 }
 
-.tema h2 {
-  color: var(--bg);
-}
 
 /* rsvp */
-.rsvp {
+/* .rsvp {
   padding-top: 10rem;
   padding-bottom: 8rem;
   font-size: 1rem;
@@ -270,31 +294,10 @@ body {
   background-color: white;
   color: var(--navy);
   border: 1px solid white;
-}
-
-/* Footer */
-footer {
-  padding: 3rem;
-  background-color: var(--navy);
-  color: var(--bg);
-}
-
-footer a {
-  color: var(--bg);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: var(--bg);
-}
-
-/* Responsive */
+} */
 
 /* Extra Large */
-@media (max-width: 1200px) {
-  
-}
+@media (max-width: 1200px) {}
 
 /* Laptop */
 @media (max-width: 992px) {
@@ -302,8 +305,12 @@ footer a:hover {
     font-size: 75%;
   }
 
-  .simply-countdown>.simply-section {
-    padding: 70px;
+  .undangan .card {
+    margin: 10px 20px 10px 20px;
+  }
+
+  .undangan .mempelai img {
+    width: 280px;
   }
 }
 
@@ -313,13 +320,8 @@ footer a:hover {
     font-size: 65%;
   }
 
-  .simply-countdown>.simply-section {
-    padding: 60px;
-    margin: 5px;
-  }
-
   .undangan .card {
-    margin: 6px 10px 6px 10px;
+    margin: 10px 20px 10px 20px;
   }
 
   .undangan .mempelai img {
@@ -333,11 +335,6 @@ footer a:hover {
     font-size: 60%;
   }
 
-  .simply-countdown>.simply-section {
-    padding: 45px;
-    margin: 3px;
-  }
-
   .img-alamat {
     width: 200px;
   }
@@ -347,10 +344,25 @@ footer a:hover {
   }
 
   .undangan .card {
-    margin: 6px 10px 6px 10px;
+    margin: 10px 20px 10px 20px;
   }
 
   .undangan .mempelai img {
     width: 200px;
+  }
+
+  .heart {
+    margin: 10px 0 20px 0;
+  }
+
+  .ucapan {
+    margin: 10px 20px 10px 20px;
+  }
+
+  .home h2,
+  .info h2,
+  .ucapan h2,
+  .rsvp h2 {
+    font-size: 3rem;
   }
 }

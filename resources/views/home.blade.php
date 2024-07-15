@@ -42,10 +42,11 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('vendors/sakura/sakura.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!-- simplyCountdown -->
-    <link rel="stylesheet" href="{{ asset('vendors/countdown/simplyCountdown.theme.default.css') }}" />
+    <link rel="stylesheet" href="{{ asset('vendors/countdown/simplyCountdown.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 
 </head>
@@ -73,7 +74,9 @@
                 <h3>Walimatul 'Ursy</h3>
                 <h1>Sitronella & Waluyo</h1>
                 <h4>-- Sabtu, 10 Agustus 2024 --</h4>
-                <div class="simply-countdown text-center"></div>
+                <div class="countdown">
+                    <div class="simply-countdown"></div>
+                </div>
                 <br><br>
                 <span class="save-date"> <i class="fa fa-calendar"></i> Save the date</span>
             </div>
@@ -81,14 +84,15 @@
     </section>
 
     <section id="undangan" class="undangan">
-        <div class="card">
+        <div class="card card-box">
             <div class="card-body">
-                <div class="text-center">
+                <div class="text-center mt-5">
                     <h3 class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h3>
-                    <p>Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, yang telah menciptakan makhluk-Nya
+                    <p class="mb-3">Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, yang telah menciptakan
+                        makhluk-Nya
                         berpasang-pasangan. Kami bermaksud menyeleggarakan acara pernikahan: </p>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center align-items-center mb-5">
                     <div class="col-xl-5 col-md-5 col-sm-12 text-center mb-5">
                         <div class="mempelai">
                             <img src="{{ asset('images/wanita.png') }}" alt="" srcset="">
@@ -96,8 +100,8 @@
                         <h3>Sitronella N H, S.T., M.T</h3>
                         <p>Putri dari <br> Bapak Ir. Rosid Hasim dan Dra. Desi Widianti</p>
                     </div>
-                    <div class="col-xl-2 col-md-2 col-sm12 text-center">
-                        <span class="heart"><i class="bi bi-heart-fill"></i></span>
+                    <div class="col-xl-2 col-md-2 col-sm12 text-center heart">
+                        <span><i class="bi bi-heart-fill"></i></span>
                     </div>
                     <div class="col-xl-5 col-md-5 col-sm-12 text-center mb-5">
                         <div class="mempelai">
@@ -113,7 +117,7 @@
 
     <section id="info" class="info">
         <div class="container">
-            <div class="row justify-content-center mt-4">
+            <div class="row justify-content-center waktu mb-5">
                 <div class="text-center">
                     <h2>Acara</h2>
                     <p>InsyaAllah rangkaian acara akan diselenggarakan pada:</p>
@@ -154,7 +158,7 @@
                 </div>
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center lokasi mb-5">
                 <div class="col-md-8 col-10 text-center">
                     <h2>Lokasi Acara</h2>
                     <p class="alamat">Gedung Madinatul Hujjaj Asrama Haji<br>
@@ -170,63 +174,66 @@
         </div>
     </section>
 
-    {{-- <section id="tema" class="tema">
+    <section id="ucapan" class="ucapan">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row form-ucapan">
+                <div class="text-center mb-2">
+                    <h2>Ucapan dan Do'a</h2>
+                </div>
+                <input type="text" id="nama" class="form-control mb-3" placeholder="Nama">
+                <textarea id="ucapan" class="form-control mb-3" cols="30" rows="10"
+                    placeholder="Tulis ucapan dan do'a..."></textarea>
+                <button class="btn btn-primary w-100">Kirim</button>
             </div>
         </div>
-    </section> --}}
+    </section>
 
-    <section id="rsvp" class="rsvp">
+    {{-- <section id="rsvp" class="rsvp">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-10 text-center">
+            <div class="row form-rsvp">
+                <div class=text-center">
                     <h2>Konfirmasi Kehadiran</h2>
                     <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
                 </div>
             </div>
-            <div class="row row-cols-md-auto g-3 align-items-center justify-content-center">
+            <div class="row align-items-center">
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
                         <input type="text" class="form-control" id="nama">
                     </div>
-                </div>
-                <div class="col-12">
-                    <div class="mb-3">
-                        <label for="jumlah" class="form-label">Jumlah</label>
-                        <input type="number" class="form-control" id="jumlah" min="1" max="5"
-                            length="1" value="1">
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="jumlah" class="form-label">Jumlah</label>
+                            <input type="number" class="form-control" id="jumlah" min="1" max="5"
+                                length="1" value="1">
+                        </div>
                     </div>
-                </div>
-                <div class="col-12">
-                    <div class="mb-3">
-                        <label for="status" class="form-label">Konfirmasi</label>
-                        <select id="status" class="form-select">
-                            <option value="" selected>Pilih salah satu</option>
-                            <option value="Hadir">Hadir</option>
-                            <option value="Tidak Hadir">Tidak Hadir</option>
-                        </select>
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Konfirmasi</label>
+                            <select id="status" class="form-select">
+                                <option value="" selected>Pilih salah satu</option>
+                                <option value="Hadir">Hadir</option>
+                                <option value="Tidak Hadir">Tidak Hadir</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12" style="margin-top: 35px;">
-                    <button class="btn btn-primary btn-kirim" data-url="{{ route('konfirmasi') }}">Kirim</button>
+                    <div class="col-12" style="margin-top: 35px;">
+                        <button class="btn btn-primary btn-kirim" data-url="{{ route('konfirmasi') }}">Kirim</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="penutup" class="penutup">
+    </div> --}}
+
+
     <div class="music" style="display: none;">
         <audio src="{{ asset('audio/audio.mp3') }}" id="my_audio" loop="loop"></audio>
     </div>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <small class="block">&copy; 2024 Wedding Sitronella & Walluyo</small>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
@@ -240,9 +247,12 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $("body,html").css({
-                "overflow": "hidden"
-            });
+            $(this).scrollTop(0);
+            setTimeout(() => {
+                $("body,html").css({
+                    "overflow": "hidden"
+                });
+            }, 1000);
 
             $(".buka-undangan").on('click', function() {
                 $("body,html").css({
