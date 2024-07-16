@@ -179,10 +179,19 @@
                 <div class="text-center mb-2">
                     <h2>Ucapan dan Do'a</h2>
                 </div>
-                <input type="text" id="nama" class="form-control mb-3" placeholder="Nama">
-                <textarea id="ucapan" class="form-control mb-3" cols="30" rows="10"
+                <input type="text" id="nama_pengirim" class="form-control mb-3" placeholder="Nama">
+                <textarea id="ucapan_pengirim" class="form-control mb-3" cols="30" rows="10"
                     placeholder="Tulis ucapan dan do'a..."></textarea>
-                <button class="btn w-100">Kirim</button>
+                <button class="btn w-100 kirim-ucapan" data-url="{{ route('ucapan') }}">Kirim</button>
+            </div>
+            <div class="row pesan-ucapan">
+                @foreach ($ucapan as $u)
+                    <div class="box-ucapan py-2">
+                        <div class="pengirim-ucapan">{{$u->pengirim}}</div>
+                        <p class="isi-ucapan">{{$u->ucapan}}</p>
+                        <small class="waktu-ucapan">{{$u->created_at->diffForHumans()}}</small>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -199,12 +208,12 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama">
+                        <input type="text" id="nama_rsvp" class="form-control">
                     </div>
                     <div class="col-12">
                         <div class="mb-3">
-                            <label for="jumlah" class="form-label">Alamat</label>
-                            <textarea id="alamat" class="form-control" cols="15" rows="10"></textarea>
+                            <label for="alamat" class="form-label">Alamat</label>
+                            <textarea id="alamat_rsvp" class="form-control" cols="15" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="col-12">
@@ -228,7 +237,7 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <button class="btn w-100 btn-kirim" data-url="{{ route('konfirmasi') }}">Kirim</button>
+                        <button class="btn w-100 kirim-rsvp" data-url="{{ route('rsvp') }}">Kirim</button>
                     </div>
                 </div>
             </div>
@@ -313,7 +322,7 @@
                 delay: 200,
             });
 
-            $(document).on('click', '.btn-kirim', function() {
+            $(document).on('click', '.kirim-rsvp', function() {
                 var nama = $('#nama').val(),
                     jumlah = $('#jumlah').val(),
                     status = $('#status').val(),
@@ -348,6 +357,40 @@
                         icon: "warning",
                         title: "Konfirmasi gagal!",
                         text: "Nama dan status kehadiran wajib diisi!",
+                    });
+                }
+            });
+
+            $(document).on('click', '.kirim-ucapan', function() {
+                var pengirim = $('#nama_pengirim').val(),
+                    ucapan = $('#ucapan_pengirim').val(),
+                    url = $(this).data('url');
+                if (pengirim != '' && ucapan != '') {
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            'pengirim': pengirim,
+                            'ucapan': ucapan
+                        },
+                        success: function(response) {
+                            if (response.status == 'success') {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: response.message,
+                                });
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 1000);
+                            }
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Ucapan gagal dikirim!",
+                        text: "Nama dan ucapan wajib diisi!",
                     });
                 }
             });

@@ -282,6 +282,29 @@ body {
   padding: 60px 200px 60px 200px;
 }
 
+.ucapan .pesan-ucapan {
+  margin-top: 40px;
+}
+
+.ucapan .pesan-ucapan .box-ucapan {
+  margin-top: 8px;
+  border-radius: 6px;
+  background-color: #4c69921f;
+}
+
+.ucapan .pesan-ucapan .box-ucapan .pengirim-ucapan{
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.ucapan .pesan-ucapan .box-ucapan .isi-ucapan{
+  font-size: 1.2rem;
+}
+
+.ucapan .pesan-ucapan .box-ucapan .waktu-ucapan{
+  font-size: 1rem;
+}
+
 .penutup .content .ayat {
   font-weight: bold;
   padding-top: 30px;
@@ -296,6 +319,7 @@ body {
 
 /* Extra Large */
 @media (max-width: 1200px) {
+
   .info,
   .ucapan,
   .rsvp,
