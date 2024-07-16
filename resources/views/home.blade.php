@@ -268,7 +268,7 @@
 
 
     <div class="music" style="display: none;">
-        <audio src="{{ asset('audio/audio.mp3') }}" id="my_audio" loop="loop"></audio>
+        <audio src="{{ asset('audio/audio.mp3') }}" id="my_audio" loop="loop" autoplay></audio>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -308,6 +308,10 @@
             setTimeout(() => {
                 $("#my_audio").get(0).play();
             }, 100);
+
+            $('body').on('click', function(){
+                $("#my_audio").get(0).play();
+            });
 
             var sakura = new Sakura('body', {
                 colors: [{
