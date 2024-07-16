@@ -211,7 +211,7 @@
             <div class="form-rsvp">
                 <div class=text-center">
                     <h2 class="text-center">Konfirmasi Kehadiran</h2>
-                    <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
+                    <p class="text-center">Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
                 </div>
             </div>
             <div class="row align-items-center">
@@ -226,24 +226,21 @@
                             <textarea id="alamat_rsvp" class="form-control" cols="15" rows="10"></textarea>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class=" form-checkmb-3">
-                            <input class="form-check-input" type="radio" name="hadir" id="flexHadir">
-                            <label class="form-check-label" for="flexHadir">
-                                Saya akan hadir
-                            </label>
+                    <div class="col-12 mt-3">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="hadir" name="optradio"
+                                value="hadir" checked>Saya akan hadir
+                            <label class="form-check-label" for="hadir"></label>
                         </div>
-                        <div class=" form-checkmb-3">
-                            <input class="form-check-input" type="radio" name="ragu" id="flexRagu">
-                            <label class="form-check-label" for="flexRagu">
-                                Saya masih ragu
-                            </label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="ragu" name="optradio"
+                                value="ragu">Saya masih ragu
+                            <label class="form-check-label" for="ragu"></label>
                         </div>
-                        <div class=" form-checkmb-3">
-                            <input class="form-check-input" type="radio" name="tidak" id="flexTidak">
-                            <label class="form-check-label" for="flexTidak">
-                                Maaf, saya tidak bisa hadir
-                            </label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="tidak" name="optradio"
+                                value="tidak">Maaf, saya tidak bisa hadir
+                            <label class="form-check-label" for="tidak"></label>
                         </div>
                     </div>
                     <div class="col-12">
@@ -333,22 +330,31 @@
             });
 
             $(document).on('click', '.kirim-rsvp', function() {
-                var nama = $('#nama').val(),
-                    jumlah = $('#jumlah').val(),
-                    status = $('#status').val(),
+                var nama = $('#nama_rsvp').val(),
+                    alamat = $('#alamat_rsvp').val(),
                     url = $(this).data('url');
-                if (nama != '' && status != '') {
+
+                var status = 'Tidak';
+                if ($('#hadir').is(':checked')) {
+                    status = 'Hadir';
+                } else if ($('#ragu').is(':checked')) {
+                    status = 'Ragu';
+                }
+
+                if (nama != '' && alamat != '') {
                     $.ajax({
                         url: url,
                         type: 'POST',
                         dataType: 'json',
                         data: {
                             'nama': nama,
-                            'jumlah': jumlah,
+                            'alamat': alamat,
                             'status': status
                         },
                         success: function(response) {
                             if (response.status == 'success') {
+                                $('#nama_rsvp').val('');
+                                $('#alamat_rsvp').val('');
                                 Swal.fire({
                                     icon: "success",
                                     title: response.message,

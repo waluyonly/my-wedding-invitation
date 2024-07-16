@@ -24,13 +24,12 @@ class HomeController extends Controller
 
     public function rsvp(Request $request)
     {
-        dd($request->all());
         if ($request->nama) {
             if (!Kehadiran::where('nama_lengkap', $request->nama)->exists()) {
                 Kehadiran::create([
                     'nama_lengkap' => $request->nama,
                     'alamat' => $request->alamat,
-                    'status_hadir' => @$request->status == 'Hadir' ? true : false,
+                    'status_hadir' => @$request->status,
                     'ip_address' => $request->ip(),
                 ]);
                 return response()->json(['status' => 'success', 'message' => 'Konfirmasi berhasil!'], 200);
