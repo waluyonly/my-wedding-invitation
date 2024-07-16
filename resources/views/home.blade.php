@@ -84,39 +84,38 @@
     </section>
 
     <section id="undangan" class="undangan">
-        <div class="card card-box">
-            <div class="card-body">
-                <div class="text-center mt-5">
-                    <h3 class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h3>
-                    <p class="mb-3">Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, yang telah menciptakan
-                        makhluk-Nya
-                        berpasang-pasangan. Kami bermaksud menyeleggarakan acara pernikahan: </p>
+        <div class="content">
+            <div class="text-center mt-5">
+                <h3 class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h3>
+                <p class="mb-3">Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala, yang telah menciptakan
+                    makhluk-Nya
+                    berpasang-pasangan. Kami bermaksud menyeleggarakan acara pernikahan: </p>
+            </div>
+            <div class="row justify-content-center mb-5">
+                <div class="col-xl-5 col-md-5 col-sm-12 text-center wanita">
+                    <div class="mempelai">
+                        <img src="{{ asset('images/wanita.png') }}" alt="" srcset="">
+                    </div>
+                    <h3>Sitronella N H, S.T., M.T</h3>
+                    <p class="orangtua">Putri dari <br> Bapak Ir. Rosid Hasim dan Dra. Desi Widianti</p>
                 </div>
-                <div class="row justify-content-center align-items-center mb-5">
-                    <div class="col-xl-5 col-md-5 col-sm-12 text-center mb-5">
-                        <div class="mempelai">
-                            <img src="{{ asset('images/wanita.png') }}" alt="" srcset="">
-                        </div>
-                        <h3>Sitronella N H, S.T., M.T</h3>
-                        <p>Putri dari <br> Bapak Ir. Rosid Hasim dan Dra. Desi Widianti</p>
+                <div class="col-xl-2 col-md-2 col-sm12 text-center heart">
+                    <span><i class="bi bi-heart-fill heartbeat"></i></span>
+                    <span><i class="bi bi-heart-fill heartecho"></i></span>
+                </div>
+                <div class="col-xl-5 col-md-5 col-sm-12 text-center pria">
+                    <div class="mempelai">
+                        <img src="{{ asset('images/pria.png') }}" alt="" srcset="">
                     </div>
-                    <div class="col-xl-2 col-md-2 col-sm12 text-center heart">
-                        <span><i class="bi bi-heart-fill"></i></span>
-                    </div>
-                    <div class="col-xl-5 col-md-5 col-sm-12 text-center mb-5">
-                        <div class="mempelai">
-                            <img src="{{ asset('images/pria.png') }}" alt="" srcset="">
-                        </div>
-                        <h3>Waluyo, S.T</h3>
-                        <p>Putra dari <br> Bapak Sariman dan Ibu Paniyem</p>
-                    </div>
+                    <h3>Waluyo, S.T</h3>
+                    <p class="orangtua">Putra dari <br> Bapak Sariman dan Ibu Paniyem</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="info" class="info">
-        <div class="container">
+        <div class="content mt-5">
             <div class="row justify-content-center waktu mb-5">
                 <div class="text-center">
                     <h2>Acara</h2>
@@ -167,7 +166,7 @@
                     <img class="img-alamat" src="{{ asset('images/qrcode-alamat.png') }}" alt=""
                         width="40%"><br>
                     <a href="https://maps.app.goo.gl/gWfDaBzJBReQhEGw7" target="_blank"
-                        class="btn btn-light btn-sm my-3">Scan di atas atau klik di sini untuk
+                        class="btn btn-sm my-3 scan-map">Scan di atas atau klik di sini untuk
                         membuka peta</a>
                 </div>
             </div>
@@ -175,7 +174,7 @@
     </section>
 
     <section id="ucapan" class="ucapan">
-        <div class="container">
+        <div class="content">
             <div class="row form-ucapan">
                 <div class="text-center mb-2">
                     <h2>Ucapan dan Do'a</h2>
@@ -183,14 +182,14 @@
                 <input type="text" id="nama" class="form-control mb-3" placeholder="Nama">
                 <textarea id="ucapan" class="form-control mb-3" cols="30" rows="10"
                     placeholder="Tulis ucapan dan do'a..."></textarea>
-                <button class="btn btn-primary w-100">Kirim</button>
+                <button class="btn w-100">Kirim</button>
             </div>
         </div>
     </section>
 
-    {{-- <section id="rsvp" class="rsvp">
-        <div class="container">
-            <div class="row form-rsvp">
+    <section id="rsvp" class="rsvp">
+        <div class="content">
+            <div class="form-rsvp">
                 <div class=text-center">
                     <h2>Konfirmasi Kehadiran</h2>
                     <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
@@ -204,31 +203,52 @@
                     </div>
                     <div class="col-12">
                         <div class="mb-3">
-                            <label for="jumlah" class="form-label">Jumlah</label>
-                            <input type="number" class="form-control" id="jumlah" min="1" max="5"
-                                length="1" value="1">
+                            <label for="jumlah" class="form-label">Alamat</label>
+                            <textarea id="alamat" class="form-control" cols="15" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="col-12">
-                        <div class="mb-3">
-                            <label for="status" class="form-label">Konfirmasi</label>
-                            <select id="status" class="form-select">
-                                <option value="" selected>Pilih salah satu</option>
-                                <option value="Hadir">Hadir</option>
-                                <option value="Tidak Hadir">Tidak Hadir</option>
-                            </select>
+                        <div class=" form-checkmb-3">
+                            <input class="form-check-input" type="radio" name="hadir" id="flexHadir">
+                            <label class="form-check-label" for="flexHadir">
+                                Saya akan hadir
+                            </label>
+                        </div>
+                        <div class=" form-checkmb-3">
+                            <input class="form-check-input" type="radio" name="ragu" id="flexRagu">
+                            <label class="form-check-label" for="flexRagu">
+                                Saya masih ragu
+                            </label>
+                        </div>
+                        <div class=" form-checkmb-3">
+                            <input class="form-check-input" type="radio" name="tidak" id="flexTidak">
+                            <label class="form-check-label" for="flexTidak">
+                                Maaf, saya tidak bisa hadir
+                            </label>
                         </div>
                     </div>
-                    <div class="col-12" style="margin-top: 35px;">
-                        <button class="btn btn-primary btn-kirim" data-url="{{ route('konfirmasi') }}">Kirim</button>
+                    <div class="col-12">
+                        <button class="btn w-100 btn-kirim" data-url="{{ route('konfirmasi') }}">Kirim</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="penutup" class="penutup">
-    </div> --}}
+    <section id="penutup" class="penutup">
+        <div class="content text-center">
+            <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk
+                memberikan do’a restu kepada kami.</p>
+
+            <p class="ayat">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari
+                jenismu sendiri, supaya kamu merasa tenang dan tentram kepadanya, dan dijadikan-Nya diantaramu rasa
+                kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang
+                berfikir.” <br> (QS. Ar-Rum: 21) </p>
+
+            <p>Kami yang berbahagia,</p>
+            <h3 class="mempelai">Sitronella & Waluyo</h3>
+        </div>
+    </section>
 
 
     <div class="music" style="display: none;">

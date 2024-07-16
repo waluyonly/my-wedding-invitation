@@ -133,14 +133,6 @@ body {
   padding-bottom: 5rem;
 }
 
-.undangan .card-box {
-  min-height: 20vh;
-  background-color: #49679133;
-  margin: 20px 100px 20px 100px;
-  border-radius: 20px;
-  border: transparent;
-}
-
 .undangan h3 {
   font-family: 'Parisienne';
   color: var(--navy);
@@ -176,128 +168,154 @@ body {
   width: 300px;
 }
 
-.heart {
-  color: #4c6992;
-  font-size: 6rem;
-  align-self: center;
-  padding: 40px 0 40px 0;
-  animation: zoom 30s infinite;
-  -webkit-animation: zoom 30s infinite;
+.undangan p .orangtua {
+  font-size: 1rem;
+  min-height: 80px;
+  margin-bottom: 10px;
 }
 
-@keyframes zoom {
+.heart {
+  padding-top: 180px;
+  font-size: 4em;
+  color: #4c6992;
+  position: absolute;
+}
+
+.heartbeat {
+  position: relative;
+  z-index: 1;
+  animation: beat 2s linear infinite;
+}
+
+.heartecho {
+  position: absolute;
+  top: 180;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: echo 2s linear infinite;
+}
+
+@keyframes beat {
   0% {
-    transform: scale(1, 1);
+    transform: scale(1);
   }
 
-  50% {
-    transform: scale(1.5, 1.5);
+  14% {
+    transform: scale(0.9);
+  }
+
+  21% {
+    transform: scale(1.1) skew(0.004turn)
+  }
+
+  28% {
+    transform: scale(1) skew(0.008turn);
+  }
+
+  35% {
+    transform: scale(1) skew(0)
+  }
+}
+
+@keyframes echo {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  14% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+
+  21% {
+    opacity: 0.4;
+    transform: scale(1.1);
   }
 
   100% {
-    transform: scale(1, 1);
+    opacity: 0;
+    transform: scale(3);
   }
 }
 
-.info {
-  background-color: var(--bg);
-  background-size: cover;
-  background-position: center;
-  color: var(--navy);
-  padding-top: 10rem;
-  padding-bottom: 8rem;
-}
-
-.info .alamat {
-  font-size: 1.1rem;
-}
-
-.info .description {
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-/* .info .card {
-  background-color: var(--navy);
-  color: var(--bg);
-  border: 1px solid var(--navy);
-} */
-
-/* .info .card-header {
-  border-bottom: 1px solid var(--navy);
-  background-color: var(--bg);
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-}
-
-.info .card-body {
-  font-size: 1rem;
-}
-
-.info .card-footer {
-  border-top: 1px solid var(--navy);
-  font-size: 0.9rem;
-  font-weight: 300;
-} */
-
-.ucapan, .rsvp {
+.info,
+.ucapan,
+.rsvp,
+.penutup {
   min-height: 20vh;
   background-color: #49679133;
-  margin: 20px 100px 20px 100px;
+  margin: 20px 200px 20px 200px;
   border-radius: 20px;
   border: transparent;
 }
 
-.ucapan .form-ucapan {
-  padding: 20px;
-}
-
-.ucapan input, .ucapan textarea {
+.ucapan input,
+.ucapan textarea,
+.rsvp input,
+.rsvp textarea {
   background-color: var(--bg);
 }
 
-.ucapan button {
-  background-color: var(--navy);
-}
-
-
-/* rsvp */
-/* .rsvp {
-  padding-top: 10rem;
-  padding-bottom: 8rem;
-  font-size: 1rem;
-  font-weight: 300;
-  background-color: var(--bg);
-}
-
-.rsvp h2 {
-  font-size: 4.5rem;
-}
-
-.rsvp p {
-  color: var(--navy);
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-.rsvp form label {
-  color: var(--navy);
-}
-
+.info .scan-map,
+.ucapan button,
 .rsvp button {
+  margin-top: 20px;
   background-color: var(--navy);
-  color: var(--bg);
-  border: 1px solid var(--navy);
+  color: white;
 }
 
+.info .scan-map:hover,
+.ucapan button:hover,
 .rsvp button:hover {
   background-color: white;
   color: var(--navy);
   border: 1px solid white;
-} */
+}
+
+.info .content,
+.ucapan .content,
+.rsvp .content,
+.penutup .content {
+  color: var(--navy);
+  padding: 60px 200px 60px 200px;
+}
+
+.penutup .content .ayat {
+  font-weight: bold;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.penutup .content .mempelai {
+  font-family: 'Parisienne';
+  font-weight: bold;
+  font-size: 2rem;
+}
 
 /* Extra Large */
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+
+  /* .undangan, */
+  .info,
+  .ucapan,
+  .rsvp,
+  .penutup {
+    margin: 20px 100px 20px 100px;
+  }
+
+  .info .content,
+  .ucapan .content,
+  .rsvp .content,
+  .penutup .content {
+    padding: 30px 40px 30px 40px;
+  }
+
+  .undangan .mempelai img {
+    width: 280px;
+  }
+}
 
 /* Laptop */
 @media (max-width: 992px) {
@@ -305,8 +323,19 @@ body {
     font-size: 75%;
   }
 
-  .undangan .card {
-    margin: 10px 20px 10px 20px;
+  .undangan,
+  .info,
+  .ucapan,
+  .rsvp,
+  .penutup {
+    margin: 20px 80px 20px 80px;
+  }
+
+  .info .content,
+  .ucapan .content,
+  .rsvp .content,
+  .penutup .content {
+    padding: 30px 40px 30px 40px;
   }
 
   .undangan .mempelai img {
@@ -320,12 +349,42 @@ body {
     font-size: 65%;
   }
 
-  .undangan .card {
-    margin: 10px 20px 10px 20px;
+  .info,
+  .ucapan,
+  .rsvp,
+  .penutup {
+    margin: 14px 24px 14px 24px;
+  }
+
+  .home h2,
+  .undangan h2,
+  .info h2,
+  .ucapan h2,
+  .rsvp h2 {
+    font-size: 3.2rem;
+  }
+
+  .info .content,
+  .ucapan .content,
+  .rsvp .content,
+  .penutup .content {
+    padding: 30px 40px 30px 40px;
   }
 
   .undangan .mempelai img {
     width: 220px;
+  }
+
+  .heart {
+    padding-top: 380px;
+  }
+
+  .heartecho {
+    top: 380;
+  }
+
+  .undangan .pria {
+    padding-top: 80px;
   }
 }
 
@@ -343,10 +402,6 @@ body {
     width: 100%;
   }
 
-  .undangan .card {
-    margin: 10px 20px 10px 20px;
-  }
-
   .undangan .mempelai img {
     width: 200px;
   }
@@ -355,14 +410,38 @@ body {
     margin: 10px 0 20px 0;
   }
 
-  .ucapan {
+  .info,
+  .ucapan,
+  .rsvp,
+  .penutup {
     margin: 10px 20px 10px 20px;
   }
 
   .home h2,
+  .undangan h2,
   .info h2,
   .ucapan h2,
-  .rsvp h2 {
+  .rsvp h2,
+  .penutup h2 {
     font-size: 3rem;
+  }
+
+  .info .content,
+  .ucapan .content,
+  .rsvp .content,
+  .penutup .content {
+    padding: 30px 40px 30px 40px;
+  }
+
+  .heart {
+    padding-top: 350px;
+  }
+
+  .heartecho {
+    top: 350;
+  }
+
+  .undangan .pria {
+    padding-top: 80px;
   }
 }
