@@ -266,6 +266,7 @@
         </div>
     </section>
 
+    <button class="backToTopBtn"><i class="fas fa-angle-up"></i></button>
 
     <div class="music" style="display: none;">
         <audio src="{{ asset('audio/audio.mp3') }}" id="my_audio" loop="loop" autoplay></audio>
@@ -309,7 +310,7 @@
                 $("#my_audio").get(0).play();
             }, 100);
 
-            $('body').on('click', function(){
+            $('body').on('click', function() {
                 $("#my_audio").get(0).play();
             });
 
@@ -438,6 +439,24 @@
                         plural: 'detik'
                     }
                 },
+            });
+
+            function scrollTop() {
+                if ($(window).scrollTop() > 500) {
+                    $(".backToTopBtn").addClass("active");
+                } else {
+                    $(".backToTopBtn").removeClass("active");
+                }
+            }
+            $(function() {
+                scrollTop();
+                $(window).on("scroll", scrollTop);
+                $(".backToTopBtn").click(function() {
+                    $("html, body").animate({
+                        scrollTop: 0
+                    }, 1);
+                    return false;
+                });
             });
         });
     </script>
