@@ -296,8 +296,6 @@ body {
 
 /* Extra Large */
 @media (max-width: 1200px) {
-
-  /* .undangan, */
   .info,
   .ucapan,
   .rsvp,
@@ -323,7 +321,6 @@ body {
     font-size: 75%;
   }
 
-  .undangan,
   .info,
   .ucapan,
   .rsvp,
