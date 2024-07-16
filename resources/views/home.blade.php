@@ -118,7 +118,7 @@
         <div class="content mt-5">
             <div class="row justify-content-center waktu mb-5">
                 <div class="text-center">
-                    <h2>Acara</h2>
+                    <h2 class="text-center">Acara</h2>
                     <p>InsyaAllah rangkaian acara akan diselenggarakan pada:</p>
                 </div>
                 <div class="col-md-5 col-10">
@@ -159,7 +159,7 @@
 
             <div class="row justify-content-center lokasi mb-5">
                 <div class="col-md-8 col-10 text-center">
-                    <h2>Lokasi Acara</h2>
+                    <h2 class="text-center">Lokasi Acara</h2>
                     <p class="alamat">Gedung Madinatul Hujjaj Asrama Haji<br>
                         Jl. Soekarno - Hatta No.36, Rajabasa Raya, Kec. Rajabasa, Kota Bandar Lampung
                     </p>
@@ -170,6 +170,16 @@
                         membuka peta</a>
                 </div>
             </div>
+            <div class="note">
+                <h2 class="text-center">Adab Walimah</h2>
+                <p class="text-center">Tanpa mengurangi rasa hormat, ada hal-hal dalam adab seorang muslim ketika
+                    menghadiri walimah yang harus diperhatikan :</p>
+                <div class="point"> <i class="fa fa-check"></i> Memakai pakaian yang sopan dan menutup aurat</div>
+                <div class="point"> <i class="fa fa-check"></i> Memperhatikan waktu sholat</div>
+                <div class="point"> <i class="fa fa-check"></i> Mendoakan kedua mempelai</div>
+                <div class="point"> <i class="fa fa-check"></i> Memperhatikan adab makan</div>
+                <div class="point"> <i class="fa fa-check"></i> Tidak berjabat tangan dengan yang bukan mahrom</div>
+            </div>
         </div>
     </section>
 
@@ -177,7 +187,7 @@
         <div class="content">
             <div class="row form-ucapan">
                 <div class="text-center mb-2">
-                    <h2>Ucapan dan Do'a</h2>
+                    <h2 class="text-center">Ucapan dan Do'a</h2>
                 </div>
                 <input type="text" id="nama_pengirim" class="form-control mb-3" placeholder="Nama">
                 <textarea id="ucapan_pengirim" class="form-control mb-3" cols="30" rows="10"
@@ -187,9 +197,9 @@
             <div class="row pesan-ucapan">
                 @foreach ($ucapan as $u)
                     <div class="box-ucapan py-2">
-                        <div class="pengirim-ucapan">{{$u->pengirim}}</div>
-                        <p class="isi-ucapan">{{$u->ucapan}}</p>
-                        <small class="waktu-ucapan">{{$u->created_at->diffForHumans()}}</small>
+                        <div class="pengirim-ucapan">{{ $u->pengirim }}</div>
+                        <p class="isi-ucapan">{{ $u->ucapan }}</p>
+                        <small class="waktu-ucapan">{{ $u->created_at->diffForHumans() }}</small>
                     </div>
                 @endforeach
             </div>
@@ -200,7 +210,7 @@
         <div class="content">
             <div class="form-rsvp">
                 <div class=text-center">
-                    <h2>Konfirmasi Kehadiran</h2>
+                    <h2 class="text-center">Konfirmasi Kehadiran</h2>
                     <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
                 </div>
             </div>

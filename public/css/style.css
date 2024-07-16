@@ -282,6 +282,13 @@ body {
   padding: 60px 200px 60px 200px;
 }
 
+.info .content .note .point {
+  background-color: #49679133;
+  border-radius: 6px;
+  margin: 4px 100px 4px 100px;
+  padding: 2px 10px 2px 10px;
+}
+
 .ucapan .pesan-ucapan {
   margin-top: 40px;
 }
@@ -292,16 +299,16 @@ body {
   background-color: #4c69921f;
 }
 
-.ucapan .pesan-ucapan .box-ucapan .pengirim-ucapan{
+.ucapan .pesan-ucapan .box-ucapan .pengirim-ucapan {
   font-size: 1rem;
   font-weight: bold;
 }
 
-.ucapan .pesan-ucapan .box-ucapan .isi-ucapan{
+.ucapan .pesan-ucapan .box-ucapan .isi-ucapan {
   font-size: 1.2rem;
 }
 
-.ucapan .pesan-ucapan .box-ucapan .waktu-ucapan{
+.ucapan .pesan-ucapan .box-ucapan .waktu-ucapan {
   font-size: 1rem;
 }
 
@@ -362,6 +369,10 @@ body {
   .undangan .mempelai img {
     width: 280px;
   }
+
+  .info .content .note .point {
+    margin: 4px 40px 4px 40px;
+  }
 }
 
 /* Tablet */
@@ -406,6 +417,10 @@ body {
 
   .undangan .pria {
     padding-top: 80px;
+  }
+
+  .info .content .note .point {
+    margin: 4px 20px 4px 20px;
   }
 }
 
@@ -464,5 +479,9 @@ body {
 
   .undangan .pria {
     padding-top: 80px;
+  }
+
+  .info .content .note .point {
+    margin: 4px 10px 4px 10px;
   }
 }
