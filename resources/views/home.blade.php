@@ -15,7 +15,7 @@
     <meta property="og:description"
         content="Wedding Sitronella & Waluyo. 10 Agustus 2024 di Asrama Haji Bandar Lampung." />
     <meta property="og:image" content="{{ asset('images/wedding.png') }}" />
-    <meta property="og:url" content="{{ env('APP_URL') }}" />
+    <meta property="og:url" content="{{ env('APP_URL') }}?undangan=" />
     <meta property="og:site_name" content="Wedding Invitation Sitronella & Waluyo | 10 Agustu 2024" />
     <meta name="twitter:card" content="website">
     <meta name="twitter:site" content="Wedding Invitation Sitronella & Waluyo | 10 Agustu 2024">
