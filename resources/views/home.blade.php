@@ -159,7 +159,7 @@
 
             <div class="row text-center himbauan">
                 <img src="{{ asset('images/tamu.svg') }}" alt="" srcset="">
-                <p class="text-center">Tamu Undangan Ikhwan & Akhwat dipisah!</p>
+                <p class="text-center">Tamu Undangan Ikhwan & Akhwat dipisah</p>
             </div>
 
             <div class="row justify-content-center lokasi mb-5">
