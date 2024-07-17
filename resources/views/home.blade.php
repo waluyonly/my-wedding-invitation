@@ -116,13 +116,13 @@
 
     <section id="info" class="info">
         <div class="content mt-5">
-            <div class="row justify-content-center waktu mb-5">
+            <div class="row justify-content-center mb-5">
                 <div class="text-center">
                     <h2 class="text-center">Acara</h2>
                     <p>InsyaAllah rangkaian acara akan diselenggarakan pada:</p>
                 </div>
-                <div class="col-md-5 col-10">
-                    <div class="card text-center text-bg-light mb-5">
+                <div class="col-xl-6 col-md-6 col-sm-12">
+                    <div class="card info-waktu text-center mb-5">
                         <div class="card-header">Akad Nikah</div>
                         <div class="card-body">
                             <div class="row justify-content-center">
@@ -138,8 +138,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 col-10">
-                    <div class="card text-center text-bg-light">
+                <div class="col-xl-6 col-md-6 col-sm-12">
+                    <div class="card info-waktu text-center">
                         <div class="card-header">Resepsi</div>
                         <div class="card-body">
                             <div class="row justify-content-center">
@@ -155,6 +155,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="row text-center himbauan">
+                <img src="{{ asset('images/tamu.svg') }}" alt="" srcset="">
+                <p class="text-center">Tamu Undangan Ikhwan & Akhwat dipisah!</p>
             </div>
 
             <div class="row justify-content-center lokasi mb-5">
@@ -266,6 +271,7 @@
         </div>
     </section>
 
+    <button class="playerButton"><i class="fa-solid fa-circle-pause"></i></button>
     <button class="backToTopBtn"><i class="fas fa-angle-up"></i></button>
 
     <div class="music" style="display: none;">
@@ -283,22 +289,16 @@
     <script src="{{ asset('vendors/sakura/sakura.js') }}"></script>
 
     <script type="text/javascript">
+        var body = document.getElementsByTagName("body")[0];
+        body.style.overflow = "hidden";
+
         $(document).ready(function() {
             $(this).scrollTop(0);
-            setTimeout(() => {
-                $("body,html").css({
-                    "overflow": "hidden"
-                });
-            }, 1000);
 
-            $(".buka-undangan").on('click', function() {
-                $("body,html").css({
-                    "overflow": "auto"
-                });
-                setTimeout(() => {
-                    document.getElementById("home").scrollIntoView();
-                }, 100);
-            });
+            setTimeout(() => {
+                $("#my_audio").get(0).play();
+            }, 100);
+            var audioState = 'play';
 
             $.ajaxSetup({
                 headers: {
@@ -306,9 +306,16 @@
                 }
             });
 
-            setTimeout(() => {
-                $("#my_audio").get(0).play();
-            }, 100);
+            $(".buka-undangan").on('click', function() {
+                $("body,html").css({
+                    "overflow": "auto"
+                });
+                setTimeout(() => {
+                    document.getElementById("home").scrollIntoView();
+                    $(".playerButton").addClass("active").addClass("play");
+                    audioState = 'play';
+                }, 100);
+            });
 
             $('body').on('click', function() {
                 $("#my_audio").get(0).play();
@@ -440,6 +447,21 @@
                     }
                 },
             });
+
+            $(document).on('click', '.playerButton', function(e) {
+                e.preventDefault();
+                if (audioState == 'play') {
+                    audioState = 'pause';
+                    $("#my_audio").get(0).pause();
+                    $(this).html('<i class="fa-solid fa-circle-play"></i>');
+                    $(this).removeClass('play').addClass('pause');
+                } else {
+                    $("#my_audio").get(0).play();
+                    audioState = 'play';
+                    $(this).html('<i class="fa-solid fa-circle-pause"></i>');
+                    $(this).removeClass('pause').addClass('play');
+                }
+            })
 
             function scrollTop() {
                 if ($(window).scrollTop() > 500) {

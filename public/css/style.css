@@ -282,6 +282,37 @@ body {
   padding: 60px 200px 60px 200px;
 }
 
+.info .info-waktu {
+  background-color: #4967912a;
+  color: var(--navy);
+}
+
+.info .himbauan {
+  background-color: #49679133;
+  border-radius: 6px;
+  margin: 20px 100px 100px 100px;
+  padding: 2px 10px 2px 10px;
+}
+
+.info .himbauan img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  animation: blinker 1s linear infinite;
+}
+
+.info .himbauan p {
+  font-size: 2rem;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.1;
+  }
+}
+
 .info .content .note .point {
   background-color: #49679133;
   border-radius: 6px;
@@ -322,6 +353,52 @@ body {
   font-family: 'Parisienne';
   font-weight: bold;
   font-size: 2rem;
+}
+
+/* Player Button */
+.playerButton {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+  height: 30px;
+  width: 30px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  border-radius: 100%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.playerButton:not(:hover) {
+  background: #4c699262;
+}
+
+.playerButton:hover {
+  background: #4c699293;
+}
+
+.playerButton.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.playerButton.play {
+  animation: spinner 5s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.playerButton:not(.active) {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Back to top */
@@ -380,6 +457,11 @@ body {
   .undangan .mempelai img {
     width: 280px;
   }
+
+  .info .himbauan {
+    margin: 10px 20px 50px 20px;
+    padding: 2px 5px 2px 5px;
+  }
 }
 
 /* Laptop */
@@ -404,6 +486,11 @@ body {
 
   .undangan .mempelai img {
     width: 280px;
+  }
+
+  .info .himbauan {
+    margin: 10px 15px 40px 15px;
+    padding: 2px 5px 2px 5px;
   }
 
   .info .content .note .point {
@@ -453,6 +540,15 @@ body {
 
   .undangan .pria {
     padding-top: 80px;
+  }
+
+  .info .himbauan {
+    margin: 10px 12px 40px 12px;
+    padding: 2px 4px 2px 4px;
+  }
+
+  .info .himbauan p {
+    font-size: 1.5rem;
   }
 
   .info .content .note .point {
@@ -519,5 +615,14 @@ body {
 
   .info .content .note .point {
     margin: 4px 10px 4px 10px;
+  }
+
+  .info .himbauan {
+    margin: 8px 10px 40px 10px;
+    padding: 2px 4px 2px 4px;
+  }
+
+  .info .himbauan p {
+    font-size: 1.3rem;
   }
 }
