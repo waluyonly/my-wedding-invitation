@@ -210,6 +210,37 @@
             </div>
         </div>
     </section>
+    
+    @if (env('HADIAH') == true)
+        <section id="hadiah" class="hadiah">
+            <div class="content">
+                <h2 class="text-center">Kirim Hadiah</h2>
+                <p class="text-center">Kehadiran dan doa restu anda merupakan karunia yang sangat berharga bagi kami,
+                    namun apabila ingin memberikan hadiah anda dapat mengirimkan ke rekening berikut, Jazakumullahu
+                    khayran</p>
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-md-6 col-sm-12 text-center">
+                        <img src="{{ asset('images/bni.png') }}" alt="" srcset="">
+                        <div class="text-center nama">a.n. Sitro Nella</div>
+                        <div class="text-center rekening rekening-bni" id="rekbni">1407556639</div>
+                        <div class="text-center mt-2">
+                            <a class="salin-rekening salin-bni" data-clipboard-target="#rekbni">Salin nomor
+                                rekening</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-sm-12 text-center">
+                        <img src="{{ asset('images/bsi.png') }}" alt="" srcset="">
+                        <div class="text-center nama">a.n. Waluyo</div>
+                        <div class="text-center rekening rekening-bsi" id="rekbsi">7190099417</div>
+                        <div class="text-center mt-2">
+                            <a class="salin-rekening salin-bsi" data-clipboard-target="#rekbsi">Salin nomor
+                                rekening</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
 
     <section id="rsvp" class="rsvp">
         <div class="content">
@@ -284,6 +315,7 @@
     <script src="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/js/all.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src="{{ asset('vendors/countdown/simplyCountdown.min.js') }}"></script>
     <script src="{{ asset('vendors/sakura/sakura.js') }}"></script>
@@ -446,6 +478,11 @@
                         plural: 'detik'
                     }
                 },
+            });
+
+            var clipboard = new ClipboardJS('.salin-rekening');
+            clipboard.on('success', function(e) {
+                e.clearSelection();
             });
 
             $(document).on('click', '.playerButton', function(e) {

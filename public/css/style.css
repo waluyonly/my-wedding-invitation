@@ -77,6 +77,7 @@ body {
 .home h2,
 .info h2,
 .ucapan h2,
+.hadiah h2,
 .rsvp h2 {
   color: var(--navy);
   font-family: 'Parisienne';
@@ -123,6 +124,17 @@ body {
   color: var(--navy);
 }
 
+.info,
+.ucapan,
+.hadiah,
+.rsvp,
+.penutup {
+  min-height: 20vh;
+  background-color: #49679133;
+  margin: 20px 200px 20px 200px;
+  border-radius: 20px;
+  border: transparent;
+}
 
 .undangan {
   background-image: url(../images/bg-pattern.jpg);
@@ -240,17 +252,6 @@ body {
   }
 }
 
-.info,
-.ucapan,
-.rsvp,
-.penutup {
-  min-height: 20vh;
-  background-color: #49679133;
-  margin: 20px 200px 20px 200px;
-  border-radius: 20px;
-  border: transparent;
-}
-
 .ucapan input,
 .ucapan textarea,
 .rsvp input,
@@ -276,6 +277,7 @@ body {
 
 .info .content,
 .ucapan .content,
+.hadiah .content,
 .rsvp .content,
 .penutup .content {
   color: var(--navy);
@@ -341,6 +343,32 @@ body {
 
 .ucapan .pesan-ucapan .box-ucapan .waktu-ucapan {
   font-size: 1rem;
+}
+
+.hadiah .content img {
+  width: 200px;
+}
+
+.hadiah .content .nama {
+  font-size: 1.6;
+}
+
+.hadiah .content .rekening {
+  font-size: 2rem;
+}
+
+.hadiah .content .salin-rekening {
+  cursor: pointer;
+  background-color: #4c699265;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 25px 10px 25px;
+  text-decoration: none;
+}
+
+.hadiah .content .salin-rekening:hover {
+  background-color: #4c6992ad;
+  color: wheat;
 }
 
 .penutup .content .ayat {
@@ -449,6 +477,7 @@ body {
 
   .info .content,
   .ucapan .content,
+  .hadiah .content,
   .rsvp .content,
   .penutup .content {
     padding: 30px 40px 30px 40px;
@@ -479,6 +508,7 @@ body {
 
   .info .content,
   .ucapan .content,
+  .hadiah .content,
   .rsvp .content,
   .penutup .content {
     padding: 30px 40px 30px 40px;
@@ -515,12 +545,14 @@ body {
   .undangan h2,
   .info h2,
   .ucapan h2,
+  .hadiah h2,
   .rsvp h2 {
     font-size: 3.2rem;
   }
 
   .info .content,
   .ucapan .content,
+  .hadiah .content,
   .rsvp .content,
   .penutup .content {
     padding: 30px 40px 30px 40px;
@@ -589,6 +621,7 @@ body {
   .undangan h2,
   .info h2,
   .ucapan h2,
+  .hadiah h2,
   .rsvp h2,
   .penutup h2 {
     font-size: 3rem;
@@ -596,6 +629,7 @@ body {
 
   .info .content,
   .ucapan .content,
+  .hadiah .content,
   .rsvp .content,
   .penutup .content {
     padding: 30px 40px 30px 40px;
