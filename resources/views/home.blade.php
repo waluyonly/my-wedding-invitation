@@ -171,20 +171,23 @@
                     <img class="img-alamat" src="{{ asset('images/qrcode-alamat.png') }}" alt=""
                         width="40%"><br>
                     <a href="https://maps.app.goo.gl/gWfDaBzJBReQhEGw7" target="_blank"
-                        class="btn btn-sm my-3 scan-map">Scan di atas atau klik di sini untuk
+                        class="btn btn-sm mt-3 scan-map">Scan di atas atau klik di sini untuk
                         membuka peta</a>
                 </div>
             </div>
-            <div class="note">
-                <h2 class="text-center">Adab Walimah</h2>
-                <p class="text-center">Tanpa mengurangi rasa hormat, ada hal-hal dalam adab seorang muslim ketika
-                    menghadiri walimah yang harus diperhatikan :</p>
-                <div class="point"> <i class="fa fa-check"></i> Memakai pakaian yang sopan dan menutup aurat</div>
-                <div class="point"> <i class="fa fa-check"></i> Memperhatikan waktu sholat</div>
-                <div class="point"> <i class="fa fa-check"></i> Mendoakan kedua mempelai</div>
-                <div class="point"> <i class="fa fa-check"></i> Memperhatikan adab makan</div>
-                <div class="point"> <i class="fa fa-check"></i> Tidak berjabat tangan dengan yang bukan mahrom</div>
-            </div>
+
+            @if (env('ADAB') == true)
+                <div class="note">
+                    <h2 class="text-center">Adab Walimah</h2>
+                    <p class="text-center">Tanpa mengurangi rasa hormat, ada hal-hal dalam adab seorang muslim ketika
+                        menghadiri walimah yang harus diperhatikan :</p>
+                    <div class="point"> <i class="fa fa-check"></i> Memakai pakaian yang sopan dan menutup aurat</div>
+                    <div class="point"> <i class="fa fa-check"></i> Memperhatikan waktu sholat</div>
+                    <div class="point"> <i class="fa fa-check"></i> Mendoakan kedua mempelai</div>
+                    <div class="point"> <i class="fa fa-check"></i> Memperhatikan adab makan</div>
+                    <div class="point"> <i class="fa fa-check"></i> Tidak berjabat tangan dengan yang bukan mahrom</div>
+                </div>
+            @endif
         </div>
     </section>
 
