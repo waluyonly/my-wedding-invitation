@@ -96,8 +96,8 @@
                     <div class="mempelai">
                         <img src="{{ asset('images/wanita.png') }}" alt="" srcset="">
                     </div>
-                    <h3>Sitronella N H, S.T., M.T</h3>
-                    <p class="orangtua">Putri dari <br> Bapak Ir. Rosid Hasim dan Dra. Desi Widianti</p>
+                    <h3>Sitronella Nurfitriani Hasim</h3>
+                    <p class="orangtua">Putri dari <br> Bapak Rosid Hasim dan Ibu Desi Widianti</p>
                 </div>
                 <div class="col-xl-2 col-md-2 col-sm12 text-center heart">
                     <span><i class="bi bi-heart-fill heartbeat"></i></span>
@@ -107,7 +107,7 @@
                     <div class="mempelai">
                         <img src="{{ asset('images/pria.png') }}" alt="" srcset="">
                     </div>
-                    <h3>Waluyo, S.T</h3>
+                    <h3>Waluyo</h3>
                     <p class="orangtua">Putra dari <br> Bapak Sariman dan Ibu Paniyem</p>
                 </div>
             </div>
