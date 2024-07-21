@@ -16,12 +16,14 @@ class UserSeeder extends Seeder
     {
         $email = $this->command->ask('Enter Email', 'admin@wedding.online');
         $name = $this->command->ask('Enter Name', 'Admin');
+        $nickname = $this->command->ask('Enter Nikname', 'Admin');
         $role = $this->command->ask('Enter Role', 'Admin');
         $password = $this->command->ask('Enter Password', '123456');
         \App\Models\User::updateOrCreate(
             ['email' => $email],
             [
                 'name' => $name,
+                'nickname' => $nickname,
                 'role' => $role,
                 'email_verified_at' => Carbon::now(),
                 'password' => Hash::make($password),
