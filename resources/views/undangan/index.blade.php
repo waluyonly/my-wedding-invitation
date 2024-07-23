@@ -23,6 +23,13 @@
                     @endif
                 </div>
                 <div class="card-body px-0">
+                    <div class="container mb-3">
+                        <div class="row">
+                            <div class="col-12">
+                                <input id="search" class="form-control" type="text" placeholder="Cari....">
+                            </div>
+                        </div>
+                    </div>
                     <div class="table-responsive">
                         <table id="user-list-table" class="table table-striped" role="grid" data-bs-toggle="data-table">
                             <thead>
@@ -38,7 +45,7 @@
                             <tbody>
                                 @if (@$data->count() > 0)
                                     @foreach (@$data as $r)
-                                        <tr>
+                                        <tr class="items" data-item="{{ @$r->nama_lengkap }}">
                                             <td class="text-center">
                                                 <img class="bg-soft-primary rounded img-fluid avatar-40 me-3"
                                                     src="{{ asset('admin/images/avatars/cat.png') }}" alt="profile">
@@ -125,6 +132,17 @@
             clipboard.on('success', function(e) {
                 e.clearSelection();
             });
+
+            $("#search").on("keyup", function() {
+                search();
+            });
+
+            function search() {
+                var search = $("#search").val().trim().toLowerCase();
+                $(".items").show().filter(function() {
+                    return $(this).data("item").toLowerCase().indexOf(search) < 0;
+                }).hide();
+            }
         });
     </script>
 @endpush
