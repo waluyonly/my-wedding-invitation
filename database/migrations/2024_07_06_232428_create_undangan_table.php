@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('undangan', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->string('nama_lengkap');
             $table->string('nomor_telepon')->nullable();
+            $table->string('hubungan')->nullable();
             $table->timestamp('shared')->nullable();
             $table->timestamps();
         });

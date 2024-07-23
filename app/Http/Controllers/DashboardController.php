@@ -20,9 +20,4 @@ class DashboardController extends Controller
     {
         return view('dashboard');
     }
-
-    public function undangan()
-    {
-        return view('undangan.index');
-    }
 }
