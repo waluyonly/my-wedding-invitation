@@ -34,9 +34,8 @@
                         <table id="user-list-table" class="table table-striped" role="grid" data-bs-toggle="data-table">
                             <thead>
                                 <tr class="ligth">
-                                    <th class="text-center">#</th>
-                                    <th>Name</th>
                                     <th class="text-center">Share</th>
+                                    <th>Name</th>
                                     <th class="text-center">URL</th>
                                     <th class="text-center">Pengundang</th>
                                     <th style="min-width: 100px">#</th>
@@ -46,14 +45,10 @@
                                 @if (@$data->count() > 0)
                                     @foreach (@$data as $r)
                                         <tr class="items" data-item="{{ @$r->nama_lengkap }}">
-                                            <td class="text-center">
-                                                <img class="bg-soft-primary rounded img-fluid avatar-40 me-3"
-                                                    src="{{ asset('admin/images/avatars/cat.png') }}" alt="profile">
-                                            </td>
-                                            <td>{{ @$r->nama_lengkap }}</td>
                                             <td class="text-center"><span
                                                 class="btn btn-sm btn-soft-primary btn-copy copy{{@$r->id}}" data-clipboard-target="#copy{{@$r->id}}">Copy URL</span>
                                             </td>
+                                            <td>{{ @$r->nama_lengkap }}</td>
                                             <td class="text-center" id="copy{{@$r->id}}">{{ env('APP_URL') . '?undangan=' . @$r->nama_lengkap }}</td>
                                             <td class="text-center">
                                                 <span class="badge bg-primary">{{ @$r->user->name }}</span>
