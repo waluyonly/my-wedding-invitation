@@ -54,7 +54,7 @@
                                                     data-id="{{ @$r->id }}">Copy URL +
                                                     Caption</span>
                                                 <input type="hidden" id="caption{{ @$r->id }}"
-                                                    value="{{ env('APP_URL') . '?undangan=' . @$r->nama_lengkap }}
+                                                    value="{{ env('APP_URL') . '?undangan=' . str_replace(' ', '%20', $r->nama_lengkap) }}
 
 Bismillahirrahmanirrohim…
 Assalamualaikum warrahmatullahi wabarrakatuh
@@ -81,7 +81,7 @@ Wassalamualaikum Warahmatullahi Wabarakatuh">
                                             </td>
                                             <td>{{ @$r->nama_lengkap }}</td>
                                             <td class="text-center" id="copy{{ @$r->id }}">
-                                                {{ env('APP_URL') . '?undangan=' . @$r->nama_lengkap }}</td>
+                                                {{ env('APP_URL') . '?undangan=' . str_replace(' ', '%20', @$r->nama_lengkap) }}</td>
                                             <td class="text-center">
                                                 <span class="badge bg-primary">{{ @$r->user->name }}</span>
                                             </td>
