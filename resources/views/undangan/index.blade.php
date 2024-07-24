@@ -45,11 +45,43 @@
                                 @if (@$data->count() > 0)
                                     @foreach (@$data as $r)
                                         <tr class="items" data-item="{{ @$r->nama_lengkap }}">
-                                            <td class="text-center"><span
-                                                class="btn btn-sm btn-soft-primary btn-copy copy{{@$r->id}}" data-clipboard-target="#copy{{@$r->id}}">Copy URL</span>
+                                            <td class="text-center">
+                                                <span
+                                                    class="btn btn-sm btn-soft-secondary mb-1 me-3 btn-copy copy{{ @$r->id }}"
+                                                    data-clipboard-target="#copy{{ @$r->id }}">Copy URL</span><br>
+                                                <span
+                                                    class="btn btn-sm btn-soft-primary mb-1 me-3 btn-copy-caption caption{{ @$r->id }}"
+                                                    data-id="{{ @$r->id }}">Copy URL +
+                                                    Caption</span>
+                                                <input type="hidden" id="caption{{ @$r->id }}"
+                                                    value="{{ env('APP_URL') . '?undangan=' . @$r->nama_lengkap }}
+
+Bismillahirrahmanirrohim…
+Assalamualaikum warrahmatullahi wabarrakatuh
+
+Segala puji bagi Allah Subnallahu wata’ala yang telah menciptkan manusia saling berpasang-pasangan, dengan memohon rahmat dan ridho-Nya, kami bermaksud mengundang saudara/i untuk hadir dan memberikan restu pada pernikahan kami.
+
+Hari & Tanggal: Sabtu, 10 Agustus 2024
+Waktu : Akad (08.00 s/d 10.00) dan Resepsi (10.00 s/d 14.00)
+Lokasi : Gedung Madinatul Hujjaj Asrama Haji
+Jl. Soekarno - Hatta No.36, Rajabasa Raya, Kec. Rajabasa, Kota Bandar Lampung
+
+Berikut link Undangan Kami, untuk info lengkap acara bisa kunjungi :
+
+Merupakan suatu kebahagiaan bagi kami apabila Saudara/i berkenan hadir untuk memberikan doa dan restu kepada kedua mempelai.
+
+Doa keberkahan bagi pengantin pria dan wanita
+بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+
+“Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah, serta semoga Allah mempersatukan kalian berdua dalam kebaikan”
+(HR. Abu Dawud no. 2130)
+Jazakumullahu khairan katsiran
+Wassalamualaikum Warahmatullahi Wabarakatuh">
+                                                </input>
                                             </td>
                                             <td>{{ @$r->nama_lengkap }}</td>
-                                            <td class="text-center" id="copy{{@$r->id}}">{{ env('APP_URL') . '?undangan=' . @$r->nama_lengkap }}</td>
+                                            <td class="text-center" id="copy{{ @$r->id }}">
+                                                {{ env('APP_URL') . '?undangan=' . @$r->nama_lengkap }}</td>
                                             <td class="text-center">
                                                 <span class="badge bg-primary">{{ @$r->user->name }}</span>
                                             </td>
@@ -124,10 +156,28 @@
                 $(this).html('Copied');
 
             });
+
             var clipboard = new ClipboardJS('.btn-copy');
             clipboard.on('success', function(e) {
                 e.clearSelection();
             });
+
+            $('.btn-copy-caption').on('click', function() {
+                var id = $(this).data('id');
+                var caption = new ClipboardJS('.btn-copy-caption', {
+                    text: function() {
+                        return $('#caption' + id).val();
+                    }
+                });
+                caption.on('success', function(e) {
+                    $('.caption' + id).removeClass('btn-soft-secondary').addClass(
+                        'btn-soft-success text-success');
+                    $('.caption' + id).html('Copied');
+                    e.clearSelection();
+                });
+            });
+
+
 
             $("#search").on("keyup", function() {
                 search();
