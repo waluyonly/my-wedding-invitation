@@ -343,13 +343,13 @@
                 }
             });
 
-            $("body,.buka-undangan").on('click', function() {
-                bukaUndangan();                
-            });
-
-            $('body').scroll(function(){
+            $('body').on('scroll',function(){
                 bukaUndangan();
             });
+
+            $("body,.buka-undangan").on('click', function() {
+                bukaUndangan();                
+            });            
 
             function bukaUndangan(){
                 $("body,html").css({
