@@ -181,11 +181,13 @@
                     <h2 class="text-center">Adab Walimah</h2>
                     <p class="text-center">Tanpa mengurangi rasa hormat, ada hal-hal dalam adab seorang muslim ketika
                         menghadiri walimah yang harus diperhatikan :</p>
-                    <div class="point"> <i class="fa fa-check"></i> Memakai pakaian yang sopan dan menutup aurat</div>
+                    <div class="point"> <i class="fa fa-check"></i> Memakai pakaian yang sopan dan menutup aurat
+                    </div>
                     <div class="point"> <i class="fa fa-check"></i> Memperhatikan waktu sholat</div>
                     <div class="point"> <i class="fa fa-check"></i> Mendoakan kedua mempelai</div>
                     <div class="point"> <i class="fa fa-check"></i> Memperhatikan adab makan</div>
-                    <div class="point"> <i class="fa fa-check"></i> Tidak berjabat tangan dengan yang bukan mahrom</div>
+                    <div class="point"> <i class="fa fa-check"></i> Tidak berjabat tangan dengan yang bukan mahrom
+                    </div>
                 </div>
             @endif
         </div>
@@ -213,7 +215,7 @@
             </div>
         </div>
     </section>
-    
+
     @if (env('HADIAH') == true)
         <section id="hadiah" class="hadiah">
             <div class="content">
@@ -341,7 +343,15 @@
                 }
             });
 
-            $(".buka-undangan").on('click', function() {
+            $("body,.buka-undangan").on('click', function() {
+                bukaUndangan();                
+            });
+
+            $('body').scroll(function(){
+                bukaUndangan();
+            });
+
+            function bukaUndangan(){
                 $("body,html").css({
                     "overflow": "auto"
                 });
@@ -350,7 +360,15 @@
                     $(".playerButton").addClass("active").addClass("play");
                     audioState = 'play';
                 }, 100);
-            });
+
+                // setTimeout(() => {
+                //     $(document).scrollTop($(document).height());
+                // }, 300);
+
+                // $("html, body").animate({
+                //     scrollTop: $("#penutup").offset().top - 220
+                // }, 100000);
+            }
 
             $('body').on('click', function() {
                 $("#my_audio").get(0).play();

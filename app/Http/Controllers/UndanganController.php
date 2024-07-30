@@ -46,11 +46,12 @@ class UndanganController extends Controller
     
             foreach ($fileContents as $line) {
                 $data = str_getcsv($line);
-    
-                Undangan::updateOrCreate([
-                    'nama_lengkap' => $data[0],
-                    'user_id' => $self->id,
-                ]);
+                if (@$data[0]) {
+                    Undangan::updateOrCreate([
+                        'nama_lengkap' => $data[0],
+                        'user_id' => $self->id,
+                    ]);
+                }
             }
             return redirect()->route('undangan')->with('success', 'Data berhasil di-import.');
         }

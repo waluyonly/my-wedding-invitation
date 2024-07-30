@@ -177,8 +177,6 @@ Wassalamualaikum Warahmatullahi Wabarakatuh">
                 });
             });
 
-
-
             $("#search").on("keyup", function() {
                 search();
             });
