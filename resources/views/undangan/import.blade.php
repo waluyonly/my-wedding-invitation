@@ -7,16 +7,7 @@
         <div class="row">
             <div class="card">
                 <div class="card-body">
-                    @if ($errors->any())
-                        <div class="alert alert-danger alert-dismissible">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    <form action="" method="post">
+                    <form action="{{ route('undangan.proccess-import') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="d-flex justify-content-between">
@@ -33,10 +24,10 @@
                                     <input type="hidden" name="user" value="{{ @$self->id }}">
                                 @endif
                                 <div class="@if($self->role == 'Admin') col-md-5 @else col-md-10 @endif col-sm-12 me-3">
-                                    <input type="text" class="form-control" name="nama" value="{{ @$data->nama ?? old('value') }}" placeholder="Nama undangan">
+                                    <input type="file" class="form-control" name="file" accept=".csv">
                                 </div>
                                 <div class="col-md-2 col-sm-12 me-3">
-                                    <button class="btn btn-primary">Simpan</button>
+                                    <button class="btn btn-primary">Import</button>
                                 </div>
                             </div>
                         </div>

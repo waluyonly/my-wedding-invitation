@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
     
     Route::prefix('undangan')->group(function(){
         Route::get('/', [UndanganController::class, 'index'])->name('undangan');
+        Route::get('undangan/import', [UndanganController::class, 'import'])->name('undangan.import');
+        Route::post('undangan/import', [UndanganController::class, 'proccessImport'])->name('undangan.proccess-import');
         Route::get('undangan/create', [UndanganController::class, 'create'])->name('undangan.create');
         Route::post('undangan/create', [UndanganController::class, 'store'])->name('undangan.store');
     });

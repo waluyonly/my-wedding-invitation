@@ -11,15 +11,39 @@
                         <h4 class="card-title">Daftar Undangan</h4>
                     </div>
                     {{-- @if (auth()->user()->role == 'Admin') --}}
-                        <a href="{{ route('undangan.create') }}" class="btn btn-primary">
+                    <div class="">
+                        <a href="{{ route('undangan.create') }}" class="btn btn-success align-items-center">
+                            <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.0001 8.32739V15.6537" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M15.6668 11.9904H8.3335" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.6857 2H7.31429C4.04762 2 2 4.31208 2 7.58516V16.4148C2 19.6879 4.0381 22 7.31429 22H16.6857C19.9619 22 22 19.6879 22 16.4148V7.58516C22 4.31208 19.9619 2 16.6857 2Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </svg>
+                            Tambah Data
+                        </a>
+                        <a href="{{ route('undangan.import') }}" class="btn btn-primary align-items-center">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M7.33 2H16.66C20.06 2 22 3.92 22 7.33V16.67C22 20.06 20.07 22 16.67 22H7.33C3.92 22 2 20.06 2 16.67V7.33C2 3.92 3.92 2 7.33 2ZM12.82 12.83H15.66C16.12 12.82 16.49 12.45 16.49 11.99C16.49 11.53 16.12 11.16 15.66 11.16H12.82V8.34C12.82 7.88 12.45 7.51 11.99 7.51C11.53 7.51 11.16 7.88 11.16 8.34V11.16H8.33C8.11 11.16 7.9 11.25 7.74 11.4C7.59 11.56 7.5 11.769 7.5 11.99C7.5 12.45 7.87 12.82 8.33 12.83H11.16V15.66C11.16 16.12 11.53 16.49 11.99 16.49C12.45 16.49 12.82 16.12 12.82 15.66V12.83Z"
-                                    fill="currentColor"></path>
+                                    d="M14.7366 2.76175H8.08455C6.00455 2.75375 4.29955 4.41075 4.25055 6.49075V17.3397C4.21555 19.3897 5.84855 21.0807 7.89955 21.1167C7.96055 21.1167 8.02255 21.1167 8.08455 21.1147H16.0726C18.1416 21.0937 19.8056 19.4087 19.8026 17.3397V8.03975L14.7366 2.76175Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                                <path d="M14.4741 2.75V5.659C14.4741 7.079 15.6231 8.23 17.0431 8.234H19.7971"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                                <path d="M14.2936 12.9141H9.39355" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M11.8442 15.3639V10.4639" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
                             Import Data
                         </a>
+                    </div>
                     {{-- @endif --}}
                 </div>
                 <div class="card-body px-0">
@@ -81,7 +105,8 @@ Wassalamualaikum Warahmatullahi Wabarakatuh">
                                             </td>
                                             <td>{{ @$r->nama_lengkap }}</td>
                                             <td class="text-center" id="copy{{ @$r->id }}">
-                                                {{ env('APP_URL') . '?undangan=' . str_replace(' ', '%20', @$r->nama_lengkap) }}</td>
+                                                {{ env('APP_URL') . '?undangan=' . str_replace(' ', '%20', @$r->nama_lengkap) }}
+                                            </td>
                                             <td class="text-center">
                                                 <span class="badge bg-primary">{{ @$r->user->name }}</span>
                                             </td>

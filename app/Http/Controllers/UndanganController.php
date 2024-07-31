@@ -18,15 +18,12 @@ class UndanganController extends Controller
         if ($self->role == 'Admin') {
             $data = Undangan::with('user')->get();
         } else {
-            $data = Undangan::where('user_id',$self->id)->with('user')->get();
+            $data = Undangan::where('user_id', $self->id)->with('user')->get();
         }
-        
+
         return view('undangan.index', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $self = Auth::user();
@@ -34,16 +31,40 @@ class UndanganController extends Controller
         return view('undangan.form', compact('self', 'users'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
+    {
+        $self = User::findOrFail($request->user);
+        if (@$request->nama) {
+            if (Undangan::where('user_id', $self->id)->where('nama_lengkap', $request->nama)->exists()) {
+                return redirect()->back()->withErrors('Nama sudah ada');
+            } else {
+                $record = Undangan::create([
+                    'nama_lengkap' => @$request->nama,
+                    'user_id' => $self->id,
+                ]);
+
+                if (@$record) {
+                    return redirect()->route('undangan');
+                }
+            }
+        }
+        return redirect()->back()->withInput();
+    }
+
+    public function import()
+    {
+        $self = Auth::user();
+        $users = User::select('id', 'name')->where('role', 'Operator')->get();
+        return view('undangan.import', compact('self', 'users'));
+    }
+
+    public function proccessImport(Request $request)
     {
         $self = User::findOrFail($request->user);
         $file = $request->file('file');
         if (@$self->id && $file) {
             $fileContents = file($file->getPathname());
-    
+
             foreach ($fileContents as $line) {
                 $data = str_getcsv($line);
                 if (@$data[0]) {
