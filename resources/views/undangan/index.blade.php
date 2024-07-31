@@ -10,7 +10,7 @@
                     <div class="header-title">
                         <h4 class="card-title">Daftar Undangan</h4>
                     </div>
-                    @if (auth()->user()->role == 'Admin')
+                    {{-- @if (auth()->user()->role == 'Admin') --}}
                         <a href="{{ route('undangan.create') }}" class="btn btn-primary">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +20,7 @@
                             </svg>
                             Import Data
                         </a>
-                    @endif
+                    {{-- @endif --}}
                 </div>
                 <div class="card-body px-0">
                     <div class="container mb-3">

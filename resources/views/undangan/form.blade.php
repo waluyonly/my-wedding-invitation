@@ -13,7 +13,7 @@
                             <div class="d-flex justify-content-between">
                                 @if ($self->role == 'Admin')
                                     <div class="col-md-5 col-sm-12 me-3">
-                                        <select class="form-control" name="user">
+                                        <select class="form-control" name="user" required>
                                             <option value="">-- Select --</option>
                                             @foreach ($users as $r)
                                             <option value="{{ $r->id }}">{{ $r->name }}</option>
@@ -23,7 +23,7 @@
                                 @else
                                     <input type="hidden" name="user" value="{{ @$self->id }}">
                                 @endif
-                                <div class="col-md-5 col-sm-12 me-3">
+                                <div class="@if($self->role == 'Admin') col-md-5 @else col-md-10 @endif col-sm-12 me-3">
                                     <input type="file" class="form-control" name="file" accept=".csv">
                                 </div>
                                 <div class="col-md-2 col-sm-12 me-3">
