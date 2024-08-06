@@ -78,8 +78,7 @@
                                                     data-id="{{ @$r->id }}">Copy URL +
                                                     Caption</span>
                                                 <input type="hidden" id="caption{{ @$r->id }}"
-                                                    value="{{ env('APP_URL') . '?undangan=' . str_replace(' ', '%20', $r->nama_lengkap) }}
-
+                                                    value="
 Bismillahirrahmanirrohim…
 Assalamualaikum warrahmatullahi wabarrakatuh
 
@@ -90,7 +89,8 @@ Waktu : Akad (08.00 s/d 10.00) dan Resepsi (10.00 s/d 14.00)
 Lokasi : Gedung Madinatul Hujjaj Asrama Haji
 Jl. Soekarno - Hatta No.36, Rajabasa Raya, Kec. Rajabasa, Kota Bandar Lampung
 
-Berikut link Undangan Kami, untuk info lengkap acara bisa kunjungi :
+Untuk info lengkap terkait acara bisa kunjungi link berikut ini:
+{{ env('APP_URL') . '?undangan=' . str_replace(' ', '%20', $r->nama_lengkap) }}
 
 Merupakan suatu kebahagiaan bagi kami apabila Saudara/i berkenan hadir untuk memberikan doa dan restu kepada kedua mempelai.
 
