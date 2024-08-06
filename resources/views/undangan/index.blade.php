@@ -78,8 +78,7 @@
                                                     data-id="{{ @$r->id }}">Copy URL +
                                                     Caption</span>
                                                 <input type="hidden" id="caption{{ @$r->id }}"
-                                                    value="
-Bismillahirrahmanirrohim…
+                                                    value="Bismillahirrahmanirrohim…
 Assalamualaikum warrahmatullahi wabarrakatuh
 
 Segala puji bagi Allah Subnallahu wata’ala yang telah menciptkan manusia saling berpasang-pasangan, dengan memohon rahmat dan ridho-Nya, kami bermaksud mengundang saudara/i untuk hadir dan memberikan restu pada pernikahan kami.
@@ -99,7 +98,9 @@ Doa keberkahan bagi pengantin pria dan wanita
 
 “Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah, serta semoga Allah mempersatukan kalian berdua dalam kebaikan”
 (HR. Abu Dawud no. 2130)
+
 Jazakumullahu khairan katsiran
+
 Wassalamualaikum Warahmatullahi Wabarakatuh">
                                                 </input>
                                             </td>
